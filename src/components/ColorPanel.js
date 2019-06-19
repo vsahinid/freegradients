@@ -12,7 +12,13 @@ class ColorPanel extends Component {
   render() {
     return (
       <div>
-        <ColorSlider color1="red" color2="blue" title="Capricious" />
+        <ColorSlider
+          orientation1="top"
+          orientation2="bottom"
+          color1="#430089"
+          color2="#82ffa1"
+          title="Capricious"
+        />
         <Arrows />
       </div>
     );

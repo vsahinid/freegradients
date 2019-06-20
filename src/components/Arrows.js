@@ -3,10 +3,9 @@ import "./Arrows.css";
 
 const Arrows = () => {
   return (
-    <div>
-      <a className="arrow arrow-left" title="Previous" href="javascript:;" />
-
-      <a className="arrow arrow-right" title="Next" href="javascript:;" />
+    <div style={{ display: "flex" }}>
+      <button className="btn btn-primary leftButton btn-lg">{"<"}</button>
+      <button className="btn btn-primary rightButton btn-lg">{">"}</button>
     </div>
   );
 };

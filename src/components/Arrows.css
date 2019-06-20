@@ -25,9 +25,6 @@
     left: 0%;
 }
 
-
-
-
 a:nth-child(2) {
     left: 65%;
 }
@@ -44,4 +41,22 @@ a:nth-child(2) {
 
 .video:hover {
     color: orchid;
+}
+
+.rightButton {
+    position: relative;
+    height: 20vh;
+    top: 25vh;
+    margin-left: auto;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: block;
+}
+
+.leftButton {
+    position: relative;
+    top: 25vh;
+    display: block;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }

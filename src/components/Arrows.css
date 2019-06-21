@@ -51,6 +51,7 @@ a:nth-child(2) {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     display: block;
+    opacity: 0.4;
 }
 
 .leftButton {
@@ -59,4 +60,5 @@ a:nth-child(2) {
     display: block;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    opacity: 0.4;
 }

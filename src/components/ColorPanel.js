@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ColorSlider from "./ColorSlider";
-import Arrows from "./Arrows";
 
 class ColorPanel extends Component {
   state = {

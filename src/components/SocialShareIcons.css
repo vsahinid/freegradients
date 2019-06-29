@@ -2,12 +2,14 @@
     display: block;
     float: left;
     padding: 10px 15px;
-    border:none;
+    border: none;
     background-color: #ececec;
     text-decoration: none;
     font-size: 18px;
     color: #FFF;
+    width: 17vh;
 }
+
 .btnz:hover {
     color: #efefef;
 }
@@ -19,9 +21,11 @@
 .instagram {
     background-color: #D34998;
 }
+
 .twitter {
     background-color: #55acee;
 }
+
 .mail {
     background-color: #7D7D7D;
 }

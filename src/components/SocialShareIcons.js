@@ -6,9 +6,9 @@ const SocialShareIcons = () => {
   return (
     <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li className="nav-item">
+        <li className="nav-item m-1">
           <a
-            className="btnz share facebook btn m-1"
+            className="btnz share facebook btn"
             href={`https://www.facebook.com/sharer/sharer.php?u=${SITE_URL}`}
             target="_blank"
             rel="noopener noreferrer nofollow"

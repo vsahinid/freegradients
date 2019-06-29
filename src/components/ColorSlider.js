@@ -46,7 +46,7 @@ const ColorSlider = props => {
       className="container-flex"
       style={{
         width: "100%",
-        height: "88vh",
+        height: "91vh",
         background: colorString
       }}
     >

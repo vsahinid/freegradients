@@ -43,10 +43,10 @@ const Navbar = props => {
         <li className="m-3 text-warning">
           {" "}
           <i
-            className="fa fa-download"
+            className="fa fa-star"
             data-toggle="tooltip"
             data-placement="bottom"
-            title="Download .jpg"
+            title="View Favorites"
             style={{ fontSize: "20px" }}
           />
         </li>

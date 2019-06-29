@@ -2,55 +2,29 @@ import React from "react";
 import Arrows from "./Arrows";
 
 const ColorSlider = props => {
-  if (props.orientation1 === "top" && props.orientation2 === "bottom") {
-    let colorString =
-      "linear-gradient(" +
-      "to" +
-      " right bottom," +
-      props.color1 +
-      ", " +
-      props.color2 +
-      ")";
-  } else if (props.orientation1 === "left" && props.orientation2 === "bottom") {
-    let colorString =
-      "linear-gradient(" +
-      "to" +
-      " left bottom," +
-      props.color1 +
-      ", " +
-      props.color2 +
-      ")";
-  } else if (
-    props.orientation1 === "right" &&
-    props.orientation2 === "bottom"
-  ) {
-    let colorString =
-      "linear-gradient(" +
-      "to" +
-      " right bottom," +
-      props.color1 +
-      ", " +
-      props.color2 +
-      ")";
-  }
-  let colorString =
-    "linear-gradient(" +
-    "to" +
-    " right bottom," +
-    props.color1 +
-    ", " +
-    props.color2 +
-    ")";
+  let colorGradient = `linear-gradient(to ${props.orientation1} ${
+    props.orientation2
+  }, ${props.color1}, ${props.color2})`;
   return (
     <div
       className="container-flex"
       style={{
         width: "100%",
         height: "91vh",
-        background: colorString
+        background: colorGradient
       }}
     >
       <h4 className="p-3" style={{ color: "white" }}>
+        {/* {props.definition} */}
+        <span className="m-3">
+          <i
+            className="fa fa-info-circle"
+            data-toggle="tooltip"
+            data-placement="left"
+            title={props.definition}
+          />
+        </span>
+
         {props.title}
       </h4>
       <Arrows />

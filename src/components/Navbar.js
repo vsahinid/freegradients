@@ -5,14 +5,11 @@ import "./Navbar.css";
 import ViewAllMenu from "./ViewAllMenu";
 import GetCSSModal from "./GetCSSModal";
 
-const Navbar = () => {
+const Navbar = props => {
   const style = {
     border: "1px solid rgba(0, 0, 0, 0.125"
   };
 
-  const openGetCSSModal = () => {
-    console.log("Hey cciked get css modal");
-  };
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light navbar-static-top"
@@ -54,7 +51,13 @@ const Navbar = () => {
           />
         </li>
         <li className="m-3 text-primary">
-          <GetCSSModal />
+          <GetCSSModal
+            orientation1={props.orientation1}
+            orientation2={props.orientation2}
+            color1={props.color1}
+            color2={props.color2}
+            title={props.title}
+          />
         </li>
         <li className="m-3 text-dark">
           <i

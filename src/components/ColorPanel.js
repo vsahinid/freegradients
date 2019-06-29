@@ -1,26 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import ColorSlider from "./ColorSlider";
 
-class ColorPanel extends Component {
-  state = {
-    title: "A Lost Memory",
-    color1: "#de6262",
-    color2: "ffb88c",
-    orientation: "right"
-  };
-  render() {
-    return (
-      <div>
-        <ColorSlider
-          orientation1="right"
-          orientation2="bottom"
-          color1="#430089"
-          color2="#82ffa1"
-          title="Capricious"
-        />
-      </div>
-    );
-  }
-}
+const ColorPanel = props => {
+  return (
+    <div>
+      <ColorSlider
+        orientation1={props.orientation1}
+        orientation2={props.orientation2}
+        color1={props.color1}
+        color2={props.color2}
+        title={props.title}
+        definition={props.definition}
+      />
+    </div>
+  );
+};
 
 export default ColorPanel;

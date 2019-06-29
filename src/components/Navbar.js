@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import SocialShareIcons from "./SocialShareIcons";
 import "./Navbar.css";
 import ViewAllMenu from "./ViewAllMenu";
+import GetCSSModal from "./GetCSSModal";
 
 const Navbar = () => {
   const style = {
     border: "1px solid rgba(0, 0, 0, 0.125"
+  };
+
+  const openGetCSSModal = () => {
+    console.log("Hey cciked get css modal");
   };
   return (
     <nav
@@ -30,7 +35,7 @@ const Navbar = () => {
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
         <li className="m-3">
           <i
-            class="fa fa-bars"
+            className="fa fa-bars"
             data-toggle="tooltip"
             data-placement="bottom"
             title="View All Gradients"
@@ -49,13 +54,7 @@ const Navbar = () => {
           />
         </li>
         <li className="m-3 text-primary">
-          <i
-            className="fa fa-css3"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="Get CSS"
-            style={{ fontSize: "20px" }}
-          />
+          <GetCSSModal />
         </li>
         <li className="m-3 text-dark">
           <i

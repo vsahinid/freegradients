@@ -18,15 +18,5 @@ export const COLORS = [
     orientation2: "right",
     definition:
       "Adjective. Characterized by or given to pretentious or conspicuous show in an attempt to impress others."
-  },
-  {
-    id: 3,
-    name: "Conspicuous",
-    color1: "#B57B22",
-    color2: "#DA3F2B",
-    orientation1: "top",
-    orientation2: "left",
-    definition:
-      "Adjective. Easily seen or noticed; readily visible or observable."
   }
 ];

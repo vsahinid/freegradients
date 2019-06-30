@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SocialShareIcons from "./SocialShareIcons";
 import "./Navbar.css";
-import ViewAllMenu from "./ViewAllMenu";
+import ViewAllMenu from "../ViewAllMenu";
 import GetCSSModal from "./GetCSSModal";
+import Rotate from "./Rotate";
 
 const Navbar = props => {
   const style = {
     border: "1px solid rgba(0, 0, 0, 0.125"
   };
-
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light navbar-static-top"
@@ -56,16 +56,13 @@ const Navbar = props => {
             orientation2={props.orientation2}
             color1={props.color1}
             color2={props.color2}
-            title={props.title}
+            name={props.name}
           />
         </li>
         <li className="m-3 text-dark">
-          <i
-            className="fa fa-refresh"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="Rotate"
-            style={{ fontSize: "20px" }}
+          <Rotate
+            orientation1={props.orientation1}
+            orientation2={props.orientation2}
           />
         </li>
       </ul>

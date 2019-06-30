@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CSSCode from "./CSSCode";
 import CopiedAlert from "./CopiedAlert";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 class GetCSSModal extends Component {
   state = {
@@ -9,7 +10,7 @@ class GetCSSModal extends Component {
     copied: false
   };
 
-  copyText = () => {
+  componentDidMount() {
     const colorGradient = `to ${this.props.orientation1} ${
       this.props.orientation2
     }, ${this.props.color1}, ${this.props.color2})`;
@@ -20,7 +21,11 @@ class GetCSSModal extends Component {
     ` +
       `background: linear-gradient(${colorGradient};  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */`;
 
-    this.setState({ value: copyString }, () => console.log(this.state.value));
+    this.setState({ value: copyString });
+  }
+
+  clickHandler = () => {
+    this.setState({ clicked: true });
   };
   render() {
     return (
@@ -38,6 +43,7 @@ class GetCSSModal extends Component {
         </span>
 
         {/* <!-- Modal --> */}
+
         <div
           className="modal fade"
           id="exampleModal"
@@ -47,7 +53,16 @@ class GetCSSModal extends Component {
           aria-hidden="true"
         >
           <div className="modal-dialog" role="document">
-            {this.state.clicked ? <CopiedAlert /> : null}
+            <div
+              style={
+                this.state.clicked
+                  ? { visibility: "visible" }
+                  : { visibility: "hidden" }
+              }
+            >
+              <CopiedAlert />
+            </div>
+            {/* {this.state.clicked ? <CopiedAlert /> : null} */}
             <div className="modal-content">
               <div className="modal-header">
                 <h5
@@ -67,13 +82,15 @@ class GetCSSModal extends Component {
                 />
               </div>
               <div className="modal-footer" style={{ margin: "0 auto" }}>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={this.copyText}
-                >
-                  Click to Copy CSS
-                </button>
+                <CopyToClipboard text={this.state.value}>
+                  <button
+                    type="button"
+                    className="btn btn-primary copyButton"
+                    onClick={this.clickHandler}
+                  >
+                    Click to Copy CSS
+                  </button>
+                </CopyToClipboard>
               </div>
             </div>
           </div>

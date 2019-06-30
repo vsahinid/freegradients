@@ -9,8 +9,9 @@ const ColorPanel = props => {
         orientation2={props.orientation2}
         color1={props.color1}
         color2={props.color2}
-        title={props.title}
+        name={props.name}
         definition={props.definition}
+        id={props.id}
       />
     </div>
   );

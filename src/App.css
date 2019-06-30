@@ -12,6 +12,11 @@ html {
     overflow-y: hidden;
 }
 
+.copyButton:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 40vmin;

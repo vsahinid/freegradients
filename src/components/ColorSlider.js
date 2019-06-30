@@ -5,7 +5,7 @@ import AddToFavorites from "./AddToFavorites";
 class ColorSlider extends Component {
   state = {
     favorite: false,
-    title: ""
+    name: ""
   };
 
   setCookie = (cname, cvalue) => {
@@ -22,10 +22,10 @@ class ColorSlider extends Component {
     var ca = decodedCookie.split(";");
     for (var i = 0; i < ca.length; i++) {
       var c = ca[i];
-      while (c.charAt(0) == " ") {
+      while (c.charAt(0) === " ") {
         c = c.substring(1);
       }
-      if (c.indexOf(name) == 0) {
+      if (c.indexOf(name) === 0) {
         return c.substring(name.length, c.length);
       }
     }
@@ -42,7 +42,7 @@ class ColorSlider extends Component {
   };
 
   addToFavorites = () => {
-    const cookieName = this.props.title;
+    const cookieName = this.props.name;
     // if gradient is favorite, removed it from string and unstar
     if (this.state.favorite) {
       this.deleteCookie(cookieName);
@@ -58,7 +58,7 @@ class ColorSlider extends Component {
   };
 
   componentDidMount() {
-    const cookieName = this.props.title;
+    const cookieName = this.props.name;
     if (this.checkCookie(cookieName)) {
       this.setState({ favorite: true });
     }
@@ -81,7 +81,7 @@ class ColorSlider extends Component {
         }}
       >
         <h4 className="p-3" style={{ color: "white" }}>
-          <span className="m-3">
+          <span className="mr-5">
             <i
               className="fa fa-info-circle"
               data-toggle="tooltip"
@@ -89,7 +89,7 @@ class ColorSlider extends Component {
               title={this.props.definition}
             />
           </span>
-          {this.props.title}
+          {this.props.name}
           <span className="ml-5" onClick={this.addToFavorites}>
             {this.state.favorite ? (
               <i className="fa fa-star text-warning" />

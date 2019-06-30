@@ -1,5 +1,5 @@
 import React from "react";
-import { SITE_URL } from "../Constants";
+import { SITE_URL } from "../../Constants";
 import "./SocialShareIcons.css";
 
 const SocialShareIcons = () => {

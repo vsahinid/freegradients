@@ -3,7 +3,7 @@ import { COLORS } from "./MyColors";
 import "./App.css";
 import ColorPanel from "./components/ColorPanel/ColorPanel";
 import Navbar from "./components/Navbar/Navbar";
-const myColor = COLORS[0];
+const myColor = COLORS[COLORS.length - 1];
 
 class App extends Component {
   state = {

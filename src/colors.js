@@ -1,3 +1,16 @@
+export const BLUE = [
+  {
+    id: 1,
+    name: "Blue",
+    color1: "#430089",
+    color2: "#82ffa1",
+    orientation1: "top",
+    orientation2: "left",
+    definition:
+      "Adjective. Indicative or subject to sudden or unpredictable change; erratic."
+  }
+];
+
 export const COLORS = [
   {
     id: 1,

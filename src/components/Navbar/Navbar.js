@@ -63,6 +63,8 @@ const Navbar = props => {
           <Rotate
             orientation1={props.orientation1}
             orientation2={props.orientation2}
+            changeOrientation1={props.changeOrientation1}
+            changeOrientation2={props.changeOrientation2}
           />
         </li>
       </ul>

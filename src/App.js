@@ -15,6 +15,14 @@ class App extends Component {
     definition: myColor.definition
   };
 
+  changeOrientation1 = new_value => {
+    this.setState({ orientation1: new_value });
+  };
+
+  changeOrientation2 = new_value => {
+    this.setState({ orientation2: new_value });
+  };
+
   render() {
     return (
       <div className="App">
@@ -24,6 +32,8 @@ class App extends Component {
           color1={this.state.color1}
           color2={this.state.color2}
           name={this.state.name}
+          changeOrientation1={this.changeOrientation1}
+          changeOrientation2={this.changeOrientation2}
         />
         <ColorPanel
           orientation1={this.state.orientation1}

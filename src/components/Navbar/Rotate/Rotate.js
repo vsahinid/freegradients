@@ -8,7 +8,8 @@ class Rotate extends Component {
       this.state.orientation2 === "right"
     ) {
       this.setState({ orientation1: "bottom" }, () => {
-        console.log(`${this.state.orientation1} ${this.state.orientation2}`);
+        this.props.changeOrientation1(this.state.orientation1);
+        this.props.changeOrientation2(this.state.orientation2);
       });
     }
     if (
@@ -16,7 +17,8 @@ class Rotate extends Component {
       this.state.orientation2 === "right"
     ) {
       this.setState({ orientation2: "left" }, () => {
-        console.log(`${this.state.orientation1} ${this.state.orientation2}`);
+        this.props.changeOrientation1(this.state.orientation1);
+        this.props.changeOrientation2(this.state.orientation2);
       });
     }
     if (
@@ -24,7 +26,8 @@ class Rotate extends Component {
       this.state.orientation2 === "left"
     ) {
       this.setState({ orientation1: "top" }, () => {
-        console.log(`${this.state.orientation1} ${this.state.orientation2}`);
+        this.props.changeOrientation1(this.state.orientation1);
+        this.props.changeOrientation2(this.state.orientation2);
       });
     }
     if (
@@ -32,7 +35,8 @@ class Rotate extends Component {
       this.state.orientation2 === "left"
     ) {
       this.setState({ orientation2: "right" }, () => {
-        console.log(`${this.state.orientation1} ${this.state.orientation2}`);
+        this.props.changeOrientation1(this.state.orientation1);
+        this.props.changeOrientation2(this.state.orientation2);
       });
     }
   };

@@ -19,13 +19,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar
+        {/* <Navbar
           orientation1={this.state.orientation1}
           orientation2={this.state.orientation2}
           color1={this.state.color1}
           color2={this.state.color2}
           name={this.state.name}
-        />
+        /> */}
         <ColorPanel
           orientation1={this.state.orientation1}
           orientation2={this.state.orientation2}

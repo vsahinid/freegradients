@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Arrows from "./Arrows";
+import setCookie from "../Cookies/setCookie";
+import deleteCookie from "../Cookies/deleteCookie";
+import checkCookie from "../Cookies/checkCookie";
 
 class ColorSlider extends Component {
   state = {
@@ -7,61 +10,28 @@ class ColorSlider extends Component {
     name: ""
   };
 
-  setCookie = (cname, cvalue) => {
-    document.cookie = cname + "=" + cvalue + ";";
-  };
-
-  deleteCookie = cname => {
-    document.cookie = cname + "=" + "" + ";";
-  };
-
-  getCookie = cname => {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(";");
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) === " ") {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) === 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  };
-
-  checkCookie = cname => {
-    var cname = this.getCookie(cname);
-    if (cname !== "") {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   addToFavorites = () => {
     const cookieName = this.props.name;
     // if gradient is favorite, removed it from string and unstar
     if (this.state.favorite) {
-      this.deleteCookie(cookieName);
+      deleteCookie(cookieName);
       this.setState({ favorite: false });
     }
 
     // if gradient is not already part of cookie string, add it from string and star it
 
     if (!this.state.favorite) {
-      this.setCookie(cookieName, true);
+      setCookie(cookieName, true);
       this.setState({ favorite: true });
     }
   };
 
   componentDidMount() {
     const cookieName = this.props.name;
-    if (this.checkCookie(cookieName)) {
+    if (checkCookie(cookieName)) {
       this.setState({ favorite: true });
     }
-    if (!this.checkCookie(cookieName)) {
+    if (!checkCookie(cookieName)) {
       this.setState({ favorite: false });
     }
   }

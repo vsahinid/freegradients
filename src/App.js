@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { COLORS } from "../src/Colors";
 import "./App.css";
 import ColorPanel from "./components/ColorPanel/ColorPanel";
 import Navbar from "./components/Navbar/Navbar";
-import { COLORS } from "./Colors";
+
 const myColor = COLORS[0];
 
 class App extends Component {

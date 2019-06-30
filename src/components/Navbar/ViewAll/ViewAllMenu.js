@@ -30,7 +30,7 @@ const ViewAllMenu = () => {
                 className="modal-title col-md-12 text-center"
                 style={{ margin: "0 auto" }}
               >
-                View All Gradients
+                All Gradients
               </h5>
             </div>
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SocialShareIcons from "./SocialShareIcons";
+import SocialShareIcons from "./SocialShareIcons/SocialShareIcons";
 import "./Navbar.css";
-import ViewAllMenu from "../ViewAllMenu";
-import GetCSSModal from "./GetCSSModal";
-import Rotate from "./Rotate";
+import ViewAllMenu from "./AllMenu/ViewAllMenu";
+import GetCSSModal from "./GetCSS/GetCSSModal";
+import Rotate from "./Rotate/Rotate";
 
 const Navbar = props => {
   const style = {

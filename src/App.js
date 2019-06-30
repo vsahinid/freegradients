@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import ColorPanel from "./components/ColorPanel";
+import ColorPanel from "./components/ColorPanel/ColorPanel";
 import Navbar from "./components/Navbar/Navbar";
 import { COLORS } from "../src/Colors";
 const myColor = COLORS[2];

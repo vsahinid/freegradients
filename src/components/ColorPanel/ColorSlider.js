@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Arrows from "./Arrows";
-import AddToFavorites from "./AddToFavorites";
+import AddToFavorites from "../Navbar/ViewFavorites/AddToFavorites";
 
 class ColorSlider extends Component {
   state = {

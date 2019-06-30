@@ -80,15 +80,6 @@ export const COLORS = [
   },
   {
     id: 9,
-    name: "Colloquial",
-    color1: "#B0DF21",
-    color2: "#95D3E4",
-    orientation1: "bottom",
-    orientation2: "left",
-    definition: "Adjective. Not formal or literary."
-  },
-  {
-    id: 10,
     name: "Gritty",
     color1: "#B68157",
     color2: "#90F2F5",
@@ -96,5 +87,14 @@ export const COLORS = [
     orientation2: "right",
     definition:
       "Adjective. Containing or resembling grit; courageously persistent."
+  },
+  {
+    id: 10,
+    name: "Colloquial",
+    color1: "#B0DF21",
+    color2: "#95D3E4",
+    orientation1: "bottom",
+    orientation2: "left",
+    definition: "Adjective. Not formal or literary."
   }
 ];

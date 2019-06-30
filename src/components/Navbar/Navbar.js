@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SocialShareIcons from "./SocialShareIcons/SocialShareIcons";
 import "./Navbar.css";
-import ViewAllMenu from "./AllMenu/ViewAllMenu";
+import ViewAllMenu from "./ViewAll/ViewAllMenu";
 import GetCSSModal from "./GetCSS/GetCSSModal";
 import Rotate from "./Rotate/Rotate";
 
@@ -31,13 +31,7 @@ const Navbar = props => {
       </Link>
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
         <li className="m-3">
-          <i
-            className="fa fa-bars"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="View All Gradients"
-            style={{ fontSize: "20px" }}
-          />
+          <ViewAllMenu />
         </li>
 
         <li className="m-3 text-warning">

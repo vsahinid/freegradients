@@ -49,8 +49,7 @@ class GetCSSModal extends Component {
           id="exampleModal"
           tabIndex="-1"
           role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
+          aria-labelledby="Get CSS Code Modal"
         >
           <div className="modal-dialog" role="document">
             <div

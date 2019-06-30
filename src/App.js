@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import ColorPanel from "./components/ColorPanel/ColorPanel";
 import Navbar from "./components/Navbar/Navbar";
-import { BLUE } from "../src/Colors";
-const myColor = BLUE[0];
+import { COLORS } from "./Colors";
+const myColor = COLORS[0];
 
 class App extends Component {
   state = {

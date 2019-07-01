@@ -44,6 +44,7 @@ const ViewAllMenu = () => {
                     orientation2={gradient.orientation2}
                     color1={gradient.color1}
                     color2={gradient.color2}
+                    key={i}
                   />
                 ))}
               </div>

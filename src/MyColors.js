@@ -1,6 +1,6 @@
 export const COLORS = [
   {
-    id: 1,
+    id: 0,
     name: "Capricious",
     color1: "#430089",
     color2: "#82ffa1",
@@ -10,7 +10,7 @@ export const COLORS = [
       "Adjective. Indicative or subject to sudden or unpredictable change; erratic."
   },
   {
-    id: 2,
+    id: 1,
     name: "Ostentatious",
     color1: "#DAA520",
     color2: "#4B0082",
@@ -20,7 +20,7 @@ export const COLORS = [
       "Adjective. Characterized by or given to pretentious or conspicuous show in an attempt to impress others."
   },
   {
-    id: 3,
+    id: 2,
     name: "Conspicuous",
     color1: "#B57B22",
     color2: "#DA3F2B",
@@ -30,7 +30,7 @@ export const COLORS = [
       "Adjective. Easily seen or noticed; readily visible or observable."
   },
   {
-    id: 4,
+    id: 3,
     name: "Plummy",
     color1: "#9A2A1C",
     color2: "#E1A82D",
@@ -40,7 +40,7 @@ export const COLORS = [
       "Adjective. Full of plums; desirable; having a plum color; rich and mellow often to the point of insincerity."
   },
   {
-    id: 5,
+    id: 4,
     name: "Volition",
     color1: "#F7F7F7",
     color2: "#E7442E",
@@ -50,7 +50,7 @@ export const COLORS = [
       "Noun. The power of choosing or determining: will; an act of making a choice or decision; a choice or decision made."
   },
   {
-    id: 6,
+    id: 5,
     name: "Supersede",
     color1: "#6FB346",
     color2: "#B8CDE5",
@@ -60,7 +60,7 @@ export const COLORS = [
       "Verb. To cause to be set aside or to force out of use as inferior."
   },
   {
-    id: 7,
+    id: 6,
     name: "Contraption",
     color1: "#6A2356",
     color2: "#927A1D",
@@ -69,7 +69,7 @@ export const COLORS = [
     definition: "Noun. A device or gadget."
   },
   {
-    id: 8,
+    id: 7,
     name: "Acquisitive",
     color1: "#F6D880",
     color2: "#000000",
@@ -79,7 +79,7 @@ export const COLORS = [
       "Adjective. Strongly desirous of possessing or acquiring something."
   },
   {
-    id: 9,
+    id: 8,
     name: "Gritty",
     color1: "#B68157",
     color2: "#90F2F5",
@@ -89,7 +89,7 @@ export const COLORS = [
       "Adjective. Containing or resembling grit; courageously persistent."
   },
   {
-    id: 10,
+    id: 9,
     name: "Colloquial",
     color1: "#B0DF21",
     color2: "#95D3E4",

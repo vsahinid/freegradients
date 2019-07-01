@@ -71,7 +71,7 @@ class ColorSlider extends Component {
             <ViewAllMenu />
           </span>
         </h4>
-        <Arrows />
+        <Arrows id={this.props.id} updateColorGradient={this.props.id} />
       </div>
     );
   }

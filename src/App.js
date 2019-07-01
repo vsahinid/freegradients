@@ -3,16 +3,23 @@ import { COLORS } from "./MyColors";
 import "./App.css";
 import ColorPanel from "./components/ColorPanel/ColorPanel";
 import Navbar from "./components/Navbar/Navbar";
-const myColor = COLORS[COLORS.length - 1];
+const n = COLORS.length;
+let pickedID = Math.floor(Math.random() * n + 1) - 1;
+const myColor = COLORS[pickedID];
 
 class App extends Component {
   state = {
+    id: myColor.id,
     name: myColor.name,
     color1: myColor.color1,
     color2: myColor.color2,
     orientation1: myColor.orientation1,
     orientation2: myColor.orientation2,
     definition: myColor.definition
+  };
+
+  updateColorGradient = id => {
+    this.setState({ id: id });
   };
 
   changeOrientation1 = new_value => {
@@ -43,6 +50,7 @@ class App extends Component {
           name={this.state.name}
           definition={this.state.definition}
           id={this.state.id}
+          updateColorGradient={this.updateColorGradient}
         />
       </div>
     );

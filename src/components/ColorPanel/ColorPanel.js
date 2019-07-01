@@ -12,6 +12,7 @@ const ColorPanel = props => {
         name={props.name}
         definition={props.definition}
         id={props.id}
+        updateColorGradient={props.id}
       />
     </div>
   );

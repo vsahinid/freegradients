@@ -6,7 +6,7 @@ import { COLORS } from "../../../MyColors";
 
 const ViewAllMenu = () => {
   return (
-    <div>
+    <React.Fragment>
       <span data-toggle="modal" data-target="#AllGradientsModal">
         <i
           className="fa fa-bars"
@@ -51,7 +51,7 @@ const ViewAllMenu = () => {
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

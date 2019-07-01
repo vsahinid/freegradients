@@ -12,6 +12,20 @@ html {
     overflow-y: hidden;
 }
 
+li {
+    display: inline;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+    #utilityButtons {
+        display: none;
+    } /* hide it elsewhere */
+}
+
 .copyButton:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);

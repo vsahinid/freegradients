@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SocialShareIcons from "./SocialShareIcons/SocialShareIcons";
 import "./Navbar.css";
-import ViewAllMenu from "./ViewAll/ViewAllMenu";
 import GetCSSModal from "./GetCSS/GetCSSModal";
 import Rotate from "./Rotate/Rotate";
 
@@ -15,54 +14,54 @@ const Navbar = props => {
       className="navbar navbar-expand-lg navbar-light navbar-static-top"
       style={style}
     >
+      <Link to="/" className="navbar-brand" style={{ fontFamily: "Lobster" }}>
+        <h2>Free Gradients</h2>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <Link to="/" className="navbar-brand" style={{ fontFamily: "Lobster" }}>
-        <h2>Free Gradients</h2>
-      </Link>
-      <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li className="m-3">
-          <ViewAllMenu />
-        </li>
 
-        <li className="m-3 text-warning">
-          {" "}
-          <i
-            className="fa fa-star"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="View Favorites"
-            style={{ fontSize: "20px" }}
-          />
-        </li>
-        <li className="m-3 text-primary">
-          <GetCSSModal
-            orientation1={props.orientation1}
-            orientation2={props.orientation2}
-            color1={props.color1}
-            color2={props.color2}
-            name={props.name}
-          />
-        </li>
-        <li className="m-3 text-dark">
-          <Rotate
-            orientation1={props.orientation1}
-            orientation2={props.orientation2}
-            changeOrientation1={props.changeOrientation1}
-            changeOrientation2={props.changeOrientation2}
-          />
-        </li>
-      </ul>
-      <SocialShareIcons />
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item active m-3 text-warning">
+            <i
+              className="fa fa-star"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="View Favorites"
+              style={{ fontSize: "20px" }}
+            />
+          </li>
+          <li className="m-3 text-primary">
+            <GetCSSModal
+              orientation1={props.orientation1}
+              orientation2={props.orientation2}
+              color1={props.color1}
+              color2={props.color2}
+              name={props.name}
+            />
+          </li>
+          <li className="m-3 text-dark">
+            <Rotate
+              orientation1={props.orientation1}
+              orientation2={props.orientation2}
+              changeOrientation1={props.changeOrientation1}
+              changeOrientation2={props.changeOrientation2}
+            />
+          </li>
+        </ul>
+        <div className="my-2 my-lg-0">
+          <SocialShareIcons />
+        </div>
+      </div>
     </nav>
   );
 };

@@ -51,10 +51,7 @@ class ColorSlider extends Component {
         }}
       >
         <h4 className="p-3" style={{ color: "white" }}>
-          <span className="mr-5">
-            <ViewAllMenu />
-          </span>
-          <span className="mr-5">
+          <span className="m-5">
             <i
               className="fa fa-info-circle"
               data-toggle="tooltip"
@@ -63,12 +60,15 @@ class ColorSlider extends Component {
             />
           </span>
           {this.props.name}
-          <span className="ml-5" onClick={this.addToFavorites}>
+          <span className="m-5" onClick={this.addToFavorites}>
             {this.state.favorite ? (
               <i className="fa fa-star text-warning" />
             ) : (
               <i className="fa fa-star-o" />
             )}
+          </span>
+          <span className="m-3">
+            <ViewAllMenu />
           </span>
         </h4>
         <Arrows />

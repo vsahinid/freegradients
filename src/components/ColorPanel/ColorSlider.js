@@ -4,6 +4,7 @@ import setCookie from "../Cookies/setCookie";
 import deleteCookie from "../Cookies/deleteCookie";
 import checkCookie from "../Cookies/checkCookie";
 import ViewAllMenu from "../../components/Navbar/ViewAll/ViewAllMenu";
+import InfoCircle from "./InfoCircle";
 
 class ColorSlider extends Component {
   state = {
@@ -52,12 +53,12 @@ class ColorSlider extends Component {
       >
         <h4 className="p-3" style={{ color: "white" }}>
           <span className="m-5">
-            <i
-              className="fa fa-info-circle"
-              data-toggle="tooltip"
-              data-placement="left"
-              title={this.props.definition}
-            />
+            {this.props.definition !== "" ? (
+              <InfoCircle
+                id={this.props.id}
+                definition={this.props.definition}
+              />
+            ) : null}
           </span>
           {this.props.name}
           <span className="m-5" onClick={this.addToFavorites}>

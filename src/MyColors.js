@@ -96,5 +96,24 @@ export const COLORS = [
     orientation1: "bottom",
     orientation2: "left",
     definition: "Adjective. Not formal or literary."
+  },
+  {
+    id: 10,
+    name: "Insuperable",
+    color1: "#722325",
+    color2: "#000000",
+    orientation1: "top",
+    orientation2: "right",
+    definition:
+      "Adjective. Incapable of being overcome, or surmounted, or solved."
+  },
+  {
+    id: 11,
+    name: "Boilerplate",
+    color1: "#B6E4F4",
+    color2: "#E0E5E5",
+    orientation1: "bottom",
+    orientation2: "right",
+    definition: "Noun. A standardized text"
   }
 ];

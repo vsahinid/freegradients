@@ -15,16 +15,16 @@ class App extends Component {
     definition: ""
   };
 
-  updateColorGradient = id => {
-    let myColor = COLORS[id];
+  updateColorGradient = new_id => {
+    let myColor = COLORS[new_id];
     this.setState({
       id: myColor.id,
       name: myColor.name,
+      definition: myColor.definition,
       color1: myColor.color1,
       color2: myColor.color2,
       orientation1: myColor.orientation1,
-      orientation2: myColor.orientation2,
-      definition: myColor.definition
+      orientation2: myColor.orientation2
     });
   };
 
@@ -42,12 +42,12 @@ class App extends Component {
     let myColor = COLORS[pickedID];
     this.setState({
       id: myColor.id,
+      definition: myColor.definition,
       name: myColor.name,
       color1: myColor.color1,
       color2: myColor.color2,
       orientation1: myColor.orientation1,
-      orientation2: myColor.orientation2,
-      definition: myColor.definition
+      orientation2: myColor.orientation2
     });
   }
 

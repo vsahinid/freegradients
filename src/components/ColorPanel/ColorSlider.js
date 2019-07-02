@@ -75,7 +75,6 @@ class ColorSlider extends Component {
           <Arrows
             id={this.props.id}
             updateColorGradient={this.props.updateColorGradient}
-            hello={this.props.hello}
           />
         ) : null}
       </div>

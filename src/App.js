@@ -15,22 +15,17 @@ class App extends Component {
     definition: ""
   };
 
-  hello = id => {
-    console.log(`new id from App.js: ${id}`);
-  };
-
-  updateColorGradient = new_id => {
-    // let myColor = COLORS[new_id];
-    // this.setState({
-    //   id: myColor.id,
-    //   name: myColor.name,
-    //   color1: myColor.color1,
-    //   color2: myColor.color2,
-    //   orientation1: myColor.orientation1,
-    //   orientation2: myColor.orientation2,
-    //   definition: myColor.definition
-    // });
-    console.log(`from App.js: ${new_id}`);
+  updateColorGradient = id => {
+    let myColor = COLORS[id];
+    this.setState({
+      id: myColor.id,
+      name: myColor.name,
+      color1: myColor.color1,
+      color2: myColor.color2,
+      orientation1: myColor.orientation1,
+      orientation2: myColor.orientation2,
+      definition: myColor.definition
+    });
   };
 
   changeOrientation1 = new_value => {
@@ -54,8 +49,6 @@ class App extends Component {
       orientation2: myColor.orientation2,
       definition: myColor.definition
     });
-
-    // this.updateColorGradient(0);
   }
 
   render() {
@@ -79,7 +72,6 @@ class App extends Component {
           color2={this.state.color2}
           definition={this.state.definition}
           updateColorGradient={this.updateColorGradient}
-          hello={this.hello}
         />
       </div>
     );

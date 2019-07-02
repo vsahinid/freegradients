@@ -9,24 +9,26 @@ class Arrows extends Component {
   };
   nextButton = () => {
     if (this.state.currentID === n - 1) {
-      console.log(`current id: ${this.state.currentID}`);
       this.setState({ currentID: 0 }, () => {
-        this.props.hello(this.state.currentID);
+        this.props.updateColorGradient(this.state.currentID);
       });
     } else {
-      console.log(`current id: ${this.state.currentID}`);
       let newID = this.state.currentID + 1;
       this.setState({ currentID: newID }, () => {
-        this.props.hello(this.state.currentID);
+        this.props.updateColorGradient(this.state.currentID);
       });
     }
   };
   previousButton = () => {
     if (this.state.currentID === 0) {
-      this.setState({ currentID: n - 1 }, console.log(this.state.currentID));
+      this.setState({ currentID: n - 1 }, () => {
+        this.props.updateColorGradient(this.state.currentID);
+      });
     } else {
       let newID = this.state.currentID - 1;
-      this.setState({ currentID: newID }, console.log(this.state.currentID));
+      this.setState({ currentID: newID }, () => {
+        this.props.updateColorGradient(this.state.currentID);
+      });
     }
   };
 

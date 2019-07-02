@@ -1,8 +1,8 @@
 import getCookie from "./getCookie";
 
 const checkCookie = cname => {
-  var cname = getCookie(cname);
-  if (cname !== "") {
+  var c_name = getCookie(cname);
+  if (c_name !== "") {
     return true;
   } else {
     return false;

@@ -4,6 +4,7 @@ import SocialShareIcons from "./SocialShareIcons/SocialShareIcons";
 import "./Navbar.css";
 import GetCSSModal from "./GetCSS/GetCSSModal";
 import Rotate from "./Rotate/Rotate";
+import ViewFavorites from "../Navbar/ViewFavorites";
 
 const Navbar = props => {
   const style = {
@@ -32,13 +33,7 @@ const Navbar = props => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active m-3 text-warning">
-            <i
-              className="fa fa-star"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="View Favorites"
-              style={{ fontSize: "20px" }}
-            />
+            <ViewFavorites />
           </li>
           <li className="m-3 text-primary">
             <GetCSSModal

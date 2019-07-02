@@ -3,23 +3,34 @@ import { COLORS } from "./MyColors";
 import "./App.css";
 import ColorPanel from "./components/ColorPanel/ColorPanel";
 import Navbar from "./components/Navbar/Navbar";
-const n = COLORS.length;
-let pickedID = Math.floor(Math.random() * n + 1) - 1;
-const myColor = COLORS[pickedID];
 
 class App extends Component {
   state = {
-    id: myColor.id,
-    name: myColor.name,
-    color1: myColor.color1,
-    color2: myColor.color2,
-    orientation1: myColor.orientation1,
-    orientation2: myColor.orientation2,
-    definition: myColor.definition
+    id: "",
+    name: "",
+    color1: "",
+    color2: "",
+    orientation1: "",
+    orientation2: "",
+    definition: ""
   };
 
-  updateColorGradient = id => {
-    this.setState({ id: id });
+  hello = id => {
+    console.log(`new id from App.js: ${id}`);
+  };
+
+  updateColorGradient = new_id => {
+    // let myColor = COLORS[new_id];
+    // this.setState({
+    //   id: myColor.id,
+    //   name: myColor.name,
+    //   color1: myColor.color1,
+    //   color2: myColor.color2,
+    //   orientation1: myColor.orientation1,
+    //   orientation2: myColor.orientation2,
+    //   definition: myColor.definition
+    // });
+    console.log(`from App.js: ${new_id}`);
   };
 
   changeOrientation1 = new_value => {
@@ -29,6 +40,23 @@ class App extends Component {
   changeOrientation2 = new_value => {
     this.setState({ orientation2: new_value });
   };
+
+  componentDidMount() {
+    const n = COLORS.length;
+    let pickedID = Math.floor(Math.random() * n + 1) - 1;
+    let myColor = COLORS[pickedID];
+    this.setState({
+      id: myColor.id,
+      name: myColor.name,
+      color1: myColor.color1,
+      color2: myColor.color2,
+      orientation1: myColor.orientation1,
+      orientation2: myColor.orientation2,
+      definition: myColor.definition
+    });
+
+    // this.updateColorGradient(0);
+  }
 
   render() {
     return (
@@ -43,14 +71,15 @@ class App extends Component {
           changeOrientation2={this.changeOrientation2}
         />
         <ColorPanel
+          id={this.state.id}
+          name={this.state.name}
           orientation1={this.state.orientation1}
           orientation2={this.state.orientation2}
           color1={this.state.color1}
           color2={this.state.color2}
-          name={this.state.name}
           definition={this.state.definition}
-          id={this.state.id}
           updateColorGradient={this.updateColorGradient}
+          hello={this.hello}
         />
       </div>
     );

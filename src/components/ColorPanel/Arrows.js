@@ -1,34 +1,32 @@
 import React, { Component } from "react";
 import "./Arrows.css";
 import { COLORS } from "../../MyColors";
-const n = COLORS.length;
+let n = COLORS.length;
 
 class Arrows extends Component {
   state = {
-    currentID: ""
+    currentID: this.props.id
   };
   nextButton = () => {
     if (this.state.currentID === n - 1) {
-      console.log(`Current ID: ${this.state.currentID}`);
-      console.log(`Next ID: 0`);
-      // this.props.updateColorGradient(0);
+      console.log(`current id: ${this.state.currentID}`);
+      this.setState({ currentID: 0 }, () => {
+        this.props.hello(this.state.currentID);
+      });
     } else {
-      console.log(`Current ID: ${this.state.currentID}`);
-      const newID = this.state.currentID + 1;
-      console.log(`Previous ID: ${newID}`);
-      // this.props.updateColorGradient(this.state.currentID + 1);
+      console.log(`current id: ${this.state.currentID}`);
+      let newID = this.state.currentID + 1;
+      this.setState({ currentID: newID }, () => {
+        this.props.hello(this.state.currentID);
+      });
     }
   };
   previousButton = () => {
     if (this.state.currentID === 0) {
-      console.log(`Current ID: ${this.state.currentID}`);
-      console.log(`Previous ID: ${n - 1}`);
-      // this.props.updateColorGradient(n - 1);
+      this.setState({ currentID: n - 1 }, console.log(this.state.currentID));
     } else {
-      console.log(`Current ID: ${this.state.currentID}`);
-      const newID = this.state.currentID - 1;
-      console.log(`Previous ID: ${newID}`);
-      // this.props.updateColorGradient(this.state.currentID - 1);
+      let newID = this.state.currentID - 1;
+      this.setState({ currentID: newID }, console.log(this.state.currentID));
     }
   };
 

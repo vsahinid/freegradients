@@ -114,7 +114,7 @@ export const COLORS = [
     color2: "#E0E5E5",
     orientation1: "bottom",
     orientation2: "right",
-    definition: "Noun. A standardized text"
+    definition: "Noun. A standardized text."
   },
   {
     id: 12,

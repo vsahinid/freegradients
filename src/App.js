@@ -36,14 +36,6 @@ class App extends Component {
     });
   };
 
-  changeOrientation1 = new_value => {
-    this.setState({ orientation1: new_value });
-  };
-
-  changeOrientation2 = new_value => {
-    this.setState({ orientation2: new_value });
-  };
-
   render() {
     const gradient = this.context;
     console.log(gradient);
@@ -55,8 +47,6 @@ class App extends Component {
           color1={gradient.color1}
           color2={gradient.color2}
           name={gradient.name}
-          changeOrientation1={this.changeOrientation1}
-          changeOrientation2={this.changeOrientation2}
         />
         <ColorPanel
           id={gradient.id}

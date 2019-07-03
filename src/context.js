@@ -4,9 +4,6 @@ import { COLORS } from "./MyColors";
 const GradientContext = React.createContext();
 
 class GradientProvider extends Component {
-  hello = () => {
-    console.log("hello from context API");
-  };
   n = COLORS.length;
   pickedID = Math.floor(Math.random() * this.n + 1) - 1;
   myColor = COLORS[this.pickedID];
@@ -21,9 +18,70 @@ class GradientProvider extends Component {
     position: 1
   };
 
+  hello = () => {
+    // console.log("hello from context API");
+    this.setState({ ...this.state, position: 2 }, () =>
+      console.log(this.state.position)
+    );
+  };
+
+  changeOrientation1 = new_value => {
+    this.setState({ orientation1: new_value });
+  };
+
+  changeOrientation2 = new_value => {
+    this.setState({ orientation2: new_value });
+  };
+
+  rotateGradient = () => {
+    console.log("hello from context API");
+    if (
+      this.state.orientation1 === "top" &&
+      this.state.orientation2 === "right"
+    ) {
+      this.setState({ orientation1: "bottom" }, () => {
+        this.changeOrientation1(this.state.orientation1);
+        this.changeOrientation2(this.state.orientation2);
+      });
+    }
+    if (
+      this.state.orientation1 === "bottom" &&
+      this.state.orientation2 === "right"
+    ) {
+      this.setState({ orientation2: "left" }, () => {
+        this.changeOrientation1(this.state.orientation1);
+        this.changeOrientation2(this.state.orientation2);
+      });
+    }
+    if (
+      this.state.orientation1 === "bottom" &&
+      this.state.orientation2 === "left"
+    ) {
+      this.setState({ orientation1: "top" }, () => {
+        this.changeOrientation1(this.state.orientation1);
+        this.changeOrientation2(this.state.orientation2);
+      });
+    }
+    if (
+      this.state.orientation1 === "top" &&
+      this.state.orientation2 === "left"
+    ) {
+      this.setState({ orientation2: "right" }, () => {
+        this.changeOrientation1(this.state.orientation1);
+        this.changeOrientation2(this.state.orientation2);
+      });
+    }
+  };
+
   render() {
     return (
-      <GradientContext.Provider value={{ ...this.state, hello: this.hello }}>
+      <GradientContext.Provider
+        value={{
+          ...this.state,
+          hello: this.hello,
+          rotateGradient: this.rotateGradient
+        }}
+      >
         {this.props.children}
       </GradientContext.Provider>
     );

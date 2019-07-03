@@ -13,9 +13,6 @@ class InfoCircle extends Component {
           data-placement="left"
           title={gradient.definition}
         />
-        <button className="btn btn-primary" onClick={gradient.hello}>
-          Click me
-        </button>
       </React.Fragment>
     );
   }

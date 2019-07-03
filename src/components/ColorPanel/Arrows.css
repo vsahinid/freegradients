@@ -1,8 +1,6 @@
 .rightButton {
-    position: relative;
-    height: 20vh;
-    top: 25vh;
-    margin-left: auto;
+    top: 50%;
+    height: 15vh;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     display: block;
@@ -11,8 +9,8 @@
 }
 
 .leftButton {
-    position: relative;
-    top: 25vh;
+    top: 50%;
+    height: 15vh;
     display: block;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;

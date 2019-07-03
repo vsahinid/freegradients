@@ -16,7 +16,11 @@ li {
     display: inline;
 }
 
-a:hover{
+.colorPanelNav {
+    display: inline-block;
+}
+
+a:hover {
     text-decoration: none;
 }
 

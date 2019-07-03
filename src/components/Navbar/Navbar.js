@@ -6,7 +6,7 @@ import GetCSSModal from "./GetCSS/GetCSSModal";
 import Rotate from "./Rotate/Rotate";
 import ViewFavorites from "../Navbar/ViewFavorites";
 
-const Navbar = props => {
+const Navbar = () => {
   const style = {
     border: "1px solid rgba(0, 0, 0, 0.125"
   };
@@ -36,13 +36,7 @@ const Navbar = props => {
             <ViewFavorites />
           </li>
           <li className="m-3 text-primary">
-            <GetCSSModal
-              orientation1={props.orientation1}
-              orientation2={props.orientation2}
-              color1={props.color1}
-              color2={props.color2}
-              name={props.name}
-            />
+            <GetCSSModal />
           </li>
           <li className="m-3 text-dark">
             <Rotate />

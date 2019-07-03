@@ -2,32 +2,21 @@ import React, { Component } from "react";
 import CSSCode from "./CSSCode";
 import CopiedAlert from "./CopiedAlert";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { GradientContext } from "../../../context";
 
 class GetCSSModal extends Component {
+  static contextType = GradientContext;
   state = {
     clicked: false,
     value: "",
     copied: false
   };
 
-  componentDidMount() {
-    const colorGradient = `to ${this.props.orientation1} ${
-      this.props.orientation2
-    }, ${this.props.color1}, ${this.props.color2})`;
-    const copyString =
-      `background: ${this.props.color1}; /* fallback for old browsers */ 
-    ` +
-      `background: -webkit-linear-gradient(${colorGradient}; /* Chrome 10-25, Safari 5.1-6 */
-    ` +
-      `background: linear-gradient(${colorGradient};  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */`;
-
-    this.setState({ value: copyString });
-  }
-
   clickHandler = () => {
     this.setState({ clicked: true });
   };
   render() {
+    const gradient = this.context;
     return (
       <div>
         {/* <!-- Button trigger modal --> */}
@@ -61,7 +50,6 @@ class GetCSSModal extends Component {
             >
               <CopiedAlert />
             </div>
-            {/* {this.state.clicked ? <CopiedAlert /> : null} */}
             <div className="modal-content">
               <div className="modal-header">
                 <h5
@@ -74,10 +62,10 @@ class GetCSSModal extends Component {
               </div>
               <div className="modal-body" style={{ color: "black" }}>
                 <CSSCode
-                  orientation1={this.props.orientation1}
-                  orientation2={this.props.orientation2}
-                  color1={this.props.color1}
-                  color2={this.props.color2}
+                  orientation1={gradient.orientation1}
+                  orientation2={gradient.orientation2}
+                  color1={gradient.color1}
+                  color2={gradient.color2}
                 />
               </div>
               <div className="modal-footer" style={{ margin: "0 auto" }}>

@@ -18,13 +18,6 @@ class GradientProvider extends Component {
     position: 1
   };
 
-  hello = () => {
-    // console.log("hello from context API");
-    this.setState({ ...this.state, position: 2 }, () =>
-      console.log(this.state.position)
-    );
-  };
-
   changeOrientation1 = new_value => {
     this.setState({ orientation1: new_value });
   };
@@ -34,7 +27,6 @@ class GradientProvider extends Component {
   };
 
   rotateGradient = () => {
-    console.log("hello from context API");
     if (
       this.state.orientation1 === "top" &&
       this.state.orientation2 === "right"
@@ -73,13 +65,46 @@ class GradientProvider extends Component {
     }
   };
 
+  updateGradient = newGradient => {
+    this.setState({
+      id: newGradient.id,
+      definition: newGradient.definition,
+      name: newGradient.name,
+      color1: newGradient.color1,
+      color2: newGradient.color2,
+      orientation1: newGradient.orientation1,
+      orientation2: newGradient.orientation2
+    });
+  };
+
+  previousButton = () => {
+    if (this.state.id === 0) {
+      const newGradient = COLORS[this.n - 1];
+      this.updateGradient(newGradient);
+    } else {
+      const newGradient = COLORS[this.state.id - 1];
+      this.updateGradient(newGradient);
+    }
+  };
+
+  nextButton = () => {
+    if (this.state.id === this.n - 1) {
+      const newGradient = COLORS[0];
+      this.updateGradient(newGradient);
+    } else {
+      const newGradient = COLORS[this.state.id + 1];
+      this.updateGradient(newGradient);
+    }
+  };
+
   render() {
     return (
       <GradientContext.Provider
         value={{
           ...this.state,
-          hello: this.hello,
-          rotateGradient: this.rotateGradient
+          rotateGradient: this.rotateGradient,
+          previousButton: this.previousButton,
+          nextButton: this.nextButton
         }}
       >
         {this.props.children}

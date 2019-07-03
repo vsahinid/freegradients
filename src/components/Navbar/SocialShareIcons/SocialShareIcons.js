@@ -3,7 +3,7 @@ import { SITE_URL } from "../../../Constants";
 import "./SocialShareIcons.css";
 import { Facebook, Twitter, Email } from "react-sharingbuttons";
 import "react-sharingbuttons/dist/main.css";
-const shareText = "Check this site!";
+const shareText = "Check out this site!";
 
 const SocialShareIcons = () => {
   return (

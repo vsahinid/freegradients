@@ -10,7 +10,8 @@
     "react-router-dom": "^5.0.1",
     "react-router-sitemap": "^1.2.0",
     "react-scripts": "3.0.1",
-    "react-sharingbuttons": "^1.0.0"
+    "react-sharingbuttons": "^1.0.0",
+    "react-tooltip": "^3.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0"
+    "babel-register": "^6.26.0",
+    "react-native-typescript-transformer": "^1.2.12"
   }
 }

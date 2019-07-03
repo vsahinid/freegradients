@@ -1,21 +1,16 @@
-import React, { Component } from "react";
-import { GradientContext } from "../../context";
+import React from "react";
+import ReactTooltip from "react-tooltip";
 
-class InfoCircle extends Component {
-  static contextType = GradientContext;
-  render() {
-    const gradient = this.context;
-    return (
-      <React.Fragment>
-        <i
-          className="fa fa-info-circle"
-          data-toggle="tooltip"
-          data-placement="left"
-          title={gradient.definition}
-        />
-      </React.Fragment>
-    );
-  }
-}
+const InfoCircle = props => {
+  return (
+    <React.Fragment>
+      <p data-tip={props.definition}>
+        {" "}
+        <i className="fa fa-info-circle" />
+      </p>
+      <ReactTooltip place="top" />
+    </React.Fragment>
+  );
+};
 
 export default InfoCircle;

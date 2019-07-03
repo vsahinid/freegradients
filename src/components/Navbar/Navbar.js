@@ -45,12 +45,12 @@ const Navbar = props => {
             />
           </li>
           <li className="m-3 text-dark">
-            <Rotate
+            {/* <Rotate
               orientation1={props.orientation1}
               orientation2={props.orientation2}
               changeOrientation1={props.changeOrientation1}
               changeOrientation2={props.changeOrientation2}
-            />
+            /> */}
           </li>
         </ul>
         <div className="my-2 my-lg-0">

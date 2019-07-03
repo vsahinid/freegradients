@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import "./Arrows.css";
-import { COLORS } from "../../MyColors";
-let n = COLORS.length;
+import { GradientContext } from "../../context";
+// let n = COLORS.length;
+let n = 10;
 
 class Arrows extends Component {
+  static contextType = GradientContext;
   state = {
     currentID: this.props.id
   };
-  nextButton = () => {
-    if (this.state.currentID === n - 1) {
+  nextButton = _id => {
+    if (_id === n - 1) {
       this.setState({ currentID: 0 }, () => {
         this.props.updateColorGradient(this.state.currentID);
       });
@@ -36,17 +38,19 @@ class Arrows extends Component {
     this.setState({ currentID: this.props.id });
   }
   render() {
+    const gradient = this.context;
+    const _id = gradient.id;
     return (
       <div style={{ display: "flex" }}>
         <button
           className="btn btn-secondary leftButton btn-lg"
-          onClick={this.previousButton}
+          onClick={this.previousButton(_id)}
         >
           <b>{"<"}</b>
         </button>
         <button
           className="btn btn-secondary rightButton btn-lg"
-          onClick={this.nextButton}
+          onClick={this.nextButton(_id)}
         >
           <b>{">"}</b>
         </button>

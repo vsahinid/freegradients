@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { GradientContext } from "../../../context";
 
 class Rotate extends Component {
+  static contextType = GradientContext;
   state = { position: 1, orientation1: "", orientation2: "" };
-  clickHandler = () => {
+  clickHandler = _id => {
     if (
       this.state.orientation1 === "top" &&
       this.state.orientation2 === "right"
@@ -48,6 +50,8 @@ class Rotate extends Component {
     });
   }
   render() {
+    const gradient = this.context;
+    const _id = gradient.id;
     return (
       <div>
         <i
@@ -56,7 +60,7 @@ class Rotate extends Component {
           data-placement="bottom"
           title="Rotate"
           style={{ fontSize: "20px" }}
-          onClick={this.clickHandler}
+          onClick={this.clickHandler(_id)}
         />
       </div>
     );

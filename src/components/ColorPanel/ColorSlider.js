@@ -5,8 +5,10 @@ import deleteCookie from "../Cookies/deleteCookie";
 import checkCookie from "../Cookies/checkCookie";
 import ViewAllMenu from "../../components/Navbar/ViewAll/ViewAllMenu";
 import InfoCircle from "./InfoCircle";
+import { GradientContext } from "../../context";
 
 class ColorSlider extends Component {
+  static contextType = GradientContext;
   state = {
     favorite: false,
     name: ""
@@ -39,6 +41,7 @@ class ColorSlider extends Component {
   }
 
   render() {
+    const gradient = this.context;
     let colorGradient = `linear-gradient(to ${this.props.orientation1} ${
       this.props.orientation2
     }, ${this.props.color1}, ${this.props.color2})`;
@@ -53,14 +56,9 @@ class ColorSlider extends Component {
       >
         <h4 className="p-3" style={{ color: "white" }}>
           <span className="m-5">
-            {this.props.definition !== "" ? (
-              <InfoCircle
-                id={this.props.id}
-                definition={this.props.definition}
-              />
-            ) : null}
+            {gradient.definition !== "" ? <InfoCircle /> : null}
           </span>
-          {this.props.name}
+          {gradient.name}
           <span className="m-5" onClick={this.addToFavorites}>
             {this.state.favorite ? (
               <i className="fa fa-star text-warning" />
@@ -72,12 +70,9 @@ class ColorSlider extends Component {
             <ViewAllMenu />
           </span>
         </h4>
-        {this.props.id !== "" ? (
-          <Arrows
-            id={this.props.id}
-            updateColorGradient={this.props.updateColorGradient}
-          />
-        ) : null}
+        {/* {this.props.id !== "" ? (
+          <Arrows updateColorGradient={this.props.updateColorGradient} />
+        ) : null} */}
       </div>
     );
   }

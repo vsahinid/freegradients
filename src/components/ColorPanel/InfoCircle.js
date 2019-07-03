@@ -1,23 +1,19 @@
 import React, { Component } from "react";
-import { COLORS } from "../../MyColors";
+import { GradientContext } from "../../context";
 
 class InfoCircle extends Component {
-  state = {
-    definition: ""
-  };
-  componentDidMount() {
-    const def = COLORS[this.props.id].definition;
-    this.setState({ definition: def });
-  }
-
+  static contextType = GradientContext;
   render() {
+    const gradient = this.context;
     return (
-      <i
-        className="fa fa-info-circle"
-        data-toggle="tooltip"
-        data-placement="left"
-        title={this.state.definition}
-      />
+      <React.Fragment>
+        <i
+          className="fa fa-info-circle"
+          data-toggle="tooltip"
+          data-placement="left"
+          title={gradient.definition}
+        />
+      </React.Fragment>
     );
   }
 }

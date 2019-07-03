@@ -4,6 +4,9 @@ import { COLORS } from "./MyColors";
 const GradientContext = React.createContext();
 
 class GradientProvider extends Component {
+  hello = () => {
+    console.log("hello from context API");
+  };
   n = COLORS.length;
   pickedID = Math.floor(Math.random() * this.n + 1) - 1;
   myColor = COLORS[this.pickedID];
@@ -17,9 +20,10 @@ class GradientProvider extends Component {
     orientation2: this.myColor.orientation2,
     position: 1
   };
+
   render() {
     return (
-      <GradientContext.Provider value={{ ...this.state }}>
+      <GradientContext.Provider value={{ ...this.state, hello: this.hello }}>
         {this.props.children}
       </GradientContext.Provider>
     );

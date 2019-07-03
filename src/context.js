@@ -9,7 +9,6 @@ const GradientContext = React.createContext();
 class GradientProvider extends Component {
   constructor(props) {
     super(props);
-    console.log("called in constructor");
     this.n = COLORS.length;
     this.pickedID = Math.floor(Math.random() * this.n + 1) - 1;
     this.myColor = COLORS[this.pickedID];
@@ -82,7 +81,8 @@ class GradientProvider extends Component {
       color1: newGradient.color1,
       color2: newGradient.color2,
       orientation1: newGradient.orientation1,
-      orientation2: newGradient.orientation2
+      orientation2: newGradient.orientation2,
+      favorite: newGradient.favorite
     });
   };
 
@@ -94,6 +94,7 @@ class GradientProvider extends Component {
       const newGradient = COLORS[this.state.id - 1];
       this.updateGradient(newGradient);
     }
+    this.forceUpdate();
   };
 
   nextButton = () => {
@@ -108,49 +109,14 @@ class GradientProvider extends Component {
 
   addToFavorites = () => {
     const cookieName = this.state.name;
-    localStorage.setItem(cookieName, true);
     if (localStorage.getItem(cookieName)) {
-      console.log("is true");
-    }
-    // if gradient is favorite, removed it from string and unstar
-    if (this.state.favorite) {
-      this.setState({ ...this.state, favorite: false });
-      deleteCookie(cookieName);
-    }
-
-    // if gradient is not already part of cookie string, add it from string and star it
-
-    if (!this.state.favorite) {
-      setCookie(cookieName, true);
-      this.setState({ ...this.state, favorite: true });
+      localStorage.removeItem(cookieName); //removes the locally stored data
+      this.setState({ favorite: false });
+    } else {
+      localStorage.setItem(cookieName, true);
+      this.setState({ favorite: true });
     }
   };
-
-  componentDidMount() {
-    const cookieName = this.state.name;
-    console.log(`hey from component will mount ${cookieName}`);
-    if (checkCookie(cookieName)) {
-      this.setState({ ...this.state, favorite: true });
-    }
-    if (!checkCookie(cookieName)) {
-      this.setState({ ...this.state, favorite: false });
-    }
-  }
-
-  componentWillMount() {
-    const cookieName = this.state.name;
-    console.log(`hey from component will mount ${cookieName}`);
-    if (checkCookie(cookieName)) {
-      this.setState({ ...this.state, favorite: true });
-    }
-    if (!checkCookie(cookieName)) {
-      this.setState({ ...this.state, favorite: false });
-    }
-  }
-
-  // componentWillUpdate(nextProps, nextState) {
-
-  // }
 
   render() {
     return (

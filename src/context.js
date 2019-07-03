@@ -1,22 +1,30 @@
 import React, { Component } from "react";
 import { COLORS } from "./MyColors";
+import deleteCookie from "./components/Cookies/deleteCookie";
+import setCookie from "./components/Cookies/setCookie";
+import checkCookie from "./components/Cookies/checkCookie";
 
 const GradientContext = React.createContext();
 
 class GradientProvider extends Component {
-  n = COLORS.length;
-  pickedID = Math.floor(Math.random() * this.n + 1) - 1;
-  myColor = COLORS[this.pickedID];
-  state = {
-    id: this.myColor.id,
-    definition: this.myColor.definition,
-    name: this.myColor.name,
-    color1: this.myColor.color1,
-    color2: this.myColor.color2,
-    orientation1: this.myColor.orientation1,
-    orientation2: this.myColor.orientation2,
-    position: 1
-  };
+  constructor(props) {
+    super(props);
+    console.log("called in constructor");
+    this.n = COLORS.length;
+    this.pickedID = Math.floor(Math.random() * this.n + 1) - 1;
+    this.myColor = COLORS[this.pickedID];
+    this.state = {
+      id: this.myColor.id,
+      definition: this.myColor.definition,
+      name: this.myColor.name,
+      color1: this.myColor.color1,
+      color2: this.myColor.color2,
+      orientation1: this.myColor.orientation1,
+      orientation2: this.myColor.orientation2,
+      position: 1,
+      favorite: ""
+    };
+  }
 
   changeOrientation1 = new_value => {
     this.setState({ orientation1: new_value });
@@ -67,6 +75,7 @@ class GradientProvider extends Component {
 
   updateGradient = newGradient => {
     this.setState({
+      ...this.state,
       id: newGradient.id,
       definition: newGradient.definition,
       name: newGradient.name,
@@ -97,6 +106,52 @@ class GradientProvider extends Component {
     }
   };
 
+  addToFavorites = () => {
+    const cookieName = this.state.name;
+    localStorage.setItem(cookieName, true);
+    if (localStorage.getItem(cookieName)) {
+      console.log("is true");
+    }
+    // if gradient is favorite, removed it from string and unstar
+    if (this.state.favorite) {
+      this.setState({ ...this.state, favorite: false });
+      deleteCookie(cookieName);
+    }
+
+    // if gradient is not already part of cookie string, add it from string and star it
+
+    if (!this.state.favorite) {
+      setCookie(cookieName, true);
+      this.setState({ ...this.state, favorite: true });
+    }
+  };
+
+  componentDidMount() {
+    const cookieName = this.state.name;
+    console.log(`hey from component will mount ${cookieName}`);
+    if (checkCookie(cookieName)) {
+      this.setState({ ...this.state, favorite: true });
+    }
+    if (!checkCookie(cookieName)) {
+      this.setState({ ...this.state, favorite: false });
+    }
+  }
+
+  componentWillMount() {
+    const cookieName = this.state.name;
+    console.log(`hey from component will mount ${cookieName}`);
+    if (checkCookie(cookieName)) {
+      this.setState({ ...this.state, favorite: true });
+    }
+    if (!checkCookie(cookieName)) {
+      this.setState({ ...this.state, favorite: false });
+    }
+  }
+
+  // componentWillUpdate(nextProps, nextState) {
+
+  // }
+
   render() {
     return (
       <GradientContext.Provider
@@ -104,7 +159,8 @@ class GradientProvider extends Component {
           ...this.state,
           rotateGradient: this.rotateGradient,
           previousButton: this.previousButton,
-          nextButton: this.nextButton
+          nextButton: this.nextButton,
+          addToFavorites: this.addToFavorites
         }}
       >
         {this.props.children}

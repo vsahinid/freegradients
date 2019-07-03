@@ -1,4 +1,5 @@
 const deleteCookie = cname => {
+  // console.log(document.cookie);
   document.cookie = cname + "=" + "" + ";";
 };
 

@@ -15,14 +15,14 @@ const CSSCode = props => {
       }}
     >
       <code>{`background: ${props.color1}; `}</code>
-      <code className="text-secondary">/* fallback for old browsers */</code>
+      <code className="text-secondary">{`/* fallback for old browsers */`}</code>
       <br />
       <code>{`background: -webkit-linear-gradient(${colorGradient};`}</code>
-      <code className="text-secondary">/* Chrome 10-25, Safari 5.1-6 */</code>
+      <code className="text-secondary">{`/* Chrome 10-25, Safari 5.1-6 */`}</code>
       <br />
       <code>{`background: linear-gradient(${colorGradient};`}</code>
       <code className="text-secondary">
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        {`/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */`}
       </code>
       <br />
     </div>

@@ -18,7 +18,8 @@ class GradientProvider extends Component {
       orientation1: this.myColor.orientation1,
       orientation2: this.myColor.orientation2,
       position: 1,
-      favorite: ""
+      favorite: "",
+      allGradients: []
     };
   }
 
@@ -113,16 +114,6 @@ class GradientProvider extends Component {
       localStorage.setItem(cookieName, true);
       this.setState({ favorite: true });
     }
-
-    //prints favorites
-
-    console.clear();
-
-    // for (let i = 0; i < COLORS.length; i++) {
-    //   if (localStorage.getItem(COLORS[i].name)) {
-    //     this.setState({ favorites: [...this.state.favorites, COLORS[i]] });
-    //   }
-    // }
   };
 
   render() {
@@ -134,7 +125,6 @@ class GradientProvider extends Component {
           previousButton: this.previousButton,
           nextButton: this.nextButton,
           addToFavorites: this.addToFavorites
-          // myFavoritesList: this.myFavoritesList
         }}
       >
         {this.props.children}

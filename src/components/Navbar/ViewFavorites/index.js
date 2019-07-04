@@ -2,27 +2,9 @@ import React, { Component } from "react";
 import { COLORS } from "../../../MyColors";
 import NoFavoriteComponents from "./NoFavoriteGradients";
 import ColorGradientCard from "../ViewAll/ColorGradientCard";
-import { GradientContext } from "../../../context";
 
 class index extends Component {
-  static contextType = GradientContext;
-  state = [];
-
-  getFavorites = () => {
-    let list = [];
-    for (let i = 0; i < COLORS.length; i++) {
-      if (localStorage.getItem(COLORS[i].name)) {
-        list.push(COLORS[i]);
-      }
-    }
-    return list;
-  };
-
-  getFavorites = this.getFavorites();
-
   render() {
-    const gradient = this.context;
-
     return (
       <React.Fragment>
         <span data-toggle="modal" data-target="#FavoritesModal">
@@ -55,10 +37,23 @@ class index extends Component {
               {/* <!-- Modal body --> */}
               <div className="modal-body modal-body-all">
                 <div className="row">
-                  {this.getFavorites.length === 0 ? (
+                  {COLORS.filter(gradient =>
+                    localStorage.getItem(gradient.name)
+                  ).map((gradient, i) => (
+                    <ColorGradientCard
+                      name={gradient.name}
+                      orientation1={gradient.orientation1}
+                      orientation2={gradient.orientation2}
+                      color1={gradient.color1}
+                      color2={gradient.color2}
+                      key={i}
+                    />
+                  )).length === 0 ? (
                     <NoFavoriteComponents />
                   ) : (
-                    this.getFavorites.map((gradient, i) => (
+                    COLORS.filter(gradient =>
+                      localStorage.getItem(gradient.name)
+                    ).map((gradient, i) => (
                       <ColorGradientCard
                         name={gradient.name}
                         orientation1={gradient.orientation1}

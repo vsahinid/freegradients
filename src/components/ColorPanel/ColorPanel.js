@@ -25,9 +25,9 @@ class ColorSlider extends Component {
           <div className="m-5 colorPanelNav">
             <InfoCircle definition={gradient.definition} />
           </div>
-          {/* <div className="m-5 colorPanelNav">
+          <div className="m-5 colorPanelNav">
             <Favorite />
-          </div> */}
+          </div>
           <div className="m-5 colorPanelNav">
             <ViewAllMenu />
           </div>

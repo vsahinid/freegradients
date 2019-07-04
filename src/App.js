@@ -20,7 +20,6 @@ class App extends Component {
   };
 
   render() {
-    const gradient = this.context;
     return (
       <div className="App" onKeyDown={this.onKeyPressed} tabIndex="0">
         <Navbar />

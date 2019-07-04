@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { GradientContext } from "../../../context";
+import ReactTooltip from "react-tooltip";
 
 class Rotate extends Component {
   static contextType = GradientContext;
@@ -9,12 +10,12 @@ class Rotate extends Component {
       <div>
         <i
           className="fa fa-refresh"
-          data-toggle="tooltip"
-          data-placement="bottom"
-          title="Rotate"
+          data-tip={`Rotate`}
+          data-for="rotate"
           style={{ fontSize: "20px" }}
           onClick={gradient.rotateGradient}
         />
+        <ReactTooltip place="bottom" id="rotate" />
       </div>
     );
   }

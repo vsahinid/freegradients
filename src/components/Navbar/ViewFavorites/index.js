@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { COLORS } from "../../../MyColors";
 import NoFavoriteComponents from "./NoFavoriteGradients";
 import ColorGradientCard from "../ViewAll/ColorGradientCard";
+import ReactTooltip from "react-tooltip";
 
 class index extends Component {
   render() {
@@ -10,11 +11,11 @@ class index extends Component {
         <span data-toggle="modal" data-target="#FavoritesModal">
           <i
             className="fa fa-star"
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="View Favorites"
+            data-tip={`View Favorites`}
+            data-for="viewfavs"
             style={{ fontSize: "20px" }}
           />
+          <ReactTooltip place="bottom" id="viewfavs" />
         </span>
         {/* <!-- The Modal --> */}
         <div

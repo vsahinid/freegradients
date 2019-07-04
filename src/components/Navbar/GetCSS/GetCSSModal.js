@@ -3,6 +3,7 @@ import CSSCode from "./CSSCode";
 import CopiedAlert from "./CopiedAlert";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { GradientContext } from "../../../context";
+import ReactTooltip from "react-tooltip";
 
 class GetCSSModal extends Component {
   static contextType = GradientContext;
@@ -23,12 +24,12 @@ class GetCSSModal extends Component {
         <span data-toggle="modal" data-target="#exampleModal">
           {" "}
           <i
-            data-toggle="tooltip"
-            data-placement="bottom"
-            title="Get CSS"
             className="fa fa-css3"
+            data-tip={`Get CSS`}
+            data-for="getcss"
             style={{ fontSize: "20px" }}
           />
+          <ReactTooltip place="bottom" id="getcss" />
         </span>
 
         {/* <!-- Modal --> */}

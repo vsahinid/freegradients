@@ -4,11 +4,11 @@ import ReactTooltip from "react-tooltip";
 const InfoCircle = props => {
   return (
     <React.Fragment>
-      <p data-tip={props.definition}>
+      <p data-tip={props.definition} data-for="infocircle">
         {" "}
         <i className="fa fa-info-circle" />
       </p>
-      <ReactTooltip place="top" />
+      <ReactTooltip place="top" id="infocircle" />
     </React.Fragment>
   );
 };

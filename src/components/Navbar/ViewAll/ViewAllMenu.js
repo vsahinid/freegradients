@@ -3,6 +3,7 @@ import "./ViewAllMenu.css";
 import ColorGradientCard from "../ViewAll/ColorGradientCard";
 import "./ViewAllMenu.css";
 import { COLORS } from "../../../MyColors";
+import ReactTooltip from "react-tooltip";
 
 const ViewAllMenu = () => {
   return (
@@ -10,11 +11,11 @@ const ViewAllMenu = () => {
       <span data-toggle="modal" data-target="#AllGradientsModal">
         <i
           className="fa fa-bars"
-          data-toggle="tooltip"
-          data-placement="bottom"
-          title="View All Gradients"
+          data-tip={`View All Gradients`}
+          data-for="viewall"
           style={{ fontSize: "20px" }}
         />
+        <ReactTooltip place="bottom" id="viewall" />
       </span>
       {/* <!-- The Modal --> */}
       <div

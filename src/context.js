@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { COLORS } from "./MyColors";
-import deleteCookie from "./components/Cookies/deleteCookie";
-import setCookie from "./components/Cookies/setCookie";
-import checkCookie from "./components/Cookies/checkCookie";
 
 const GradientContext = React.createContext();
 
@@ -116,6 +113,16 @@ class GradientProvider extends Component {
       localStorage.setItem(cookieName, true);
       this.setState({ favorite: true });
     }
+
+    //prints favorites
+
+    console.clear();
+
+    // for (let i = 0; i < COLORS.length; i++) {
+    //   if (localStorage.getItem(COLORS[i].name)) {
+    //     this.setState({ favorites: [...this.state.favorites, COLORS[i]] });
+    //   }
+    // }
   };
 
   render() {
@@ -127,6 +134,7 @@ class GradientProvider extends Component {
           previousButton: this.previousButton,
           nextButton: this.nextButton,
           addToFavorites: this.addToFavorites
+          // myFavoritesList: this.myFavoritesList
         }}
       >
         {this.props.children}

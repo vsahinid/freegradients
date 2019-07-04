@@ -1,21 +1,28 @@
 import React, { Component } from "react";
 import { COLORS } from "../../../MyColors";
 import NoFavoriteComponents from "./NoFavoriteGradients";
+import ColorGradientCard from "../ViewAll/ColorGradientCard";
+import { GradientContext } from "../../../context";
 
 class index extends Component {
-  state = {
-    myFavorites: [],
-    isEmpty: ""
+  static contextType = GradientContext;
+  state = [];
+
+  getFavorites = () => {
+    let list = [];
+    for (let i = 0; i < COLORS.length; i++) {
+      if (localStorage.getItem(COLORS[i].name)) {
+        list.push(COLORS[i]);
+      }
+    }
+    return list;
   };
 
-  componentDidMount() {
-    if (this.state.myFavorites.length === 0) {
-      this.setState({ isEmpty: true });
-    } else {
-      this.setState({ isEmpty: false });
-    }
-  }
+  getFavorites = this.getFavorites();
+
   render() {
+    const gradient = this.context;
+
     return (
       <React.Fragment>
         <span data-toggle="modal" data-target="#FavoritesModal">
@@ -48,17 +55,20 @@ class index extends Component {
               {/* <!-- Modal body --> */}
               <div className="modal-body modal-body-all">
                 <div className="row">
-                  {this.state.isEmpty ? <NoFavoriteComponents /> : null}
-                  {/* {COLORS.map((gradient, i) => (
-                  <ColorGradientCard
-                    name={gradient.name}
-                    orientation1={gradient.orientation1}
-                    orientation2={gradient.orientation2}
-                    color1={gradient.color1}
-                    color2={gradient.color2}
-                    key={i}
-                  />
-                ))} */}
+                  {this.getFavorites.length === 0 ? (
+                    <NoFavoriteComponents />
+                  ) : (
+                    this.getFavorites.map((gradient, i) => (
+                      <ColorGradientCard
+                        name={gradient.name}
+                        orientation1={gradient.orientation1}
+                        orientation2={gradient.orientation2}
+                        color1={gradient.color1}
+                        color2={gradient.color2}
+                        key={i}
+                      />
+                    ))
+                  )}
                 </div>
               </div>
             </div>

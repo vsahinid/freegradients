@@ -41,19 +41,11 @@ class DownloadPDF extends Component {
           <i
             className="fas fa-file-pdf"
             data-tip={`Download as PDF`}
-            data-for="viewall"
+            data-for="downloadpdf"
             style={{ fontSize: "20px" }}
           />
-          <ReactTooltip place="bottom" id="viewall" />
+          <ReactTooltip place="bottom" id="downloadpdf" />
         </span>
-        {/* <div
-          id="capture"
-          style={{
-            background: this.state.colorGradient,
-            height: "1200px",
-            width: "800px"
-          }}
-        /> */}
       </React.Fragment>
     );
   }

@@ -5,6 +5,7 @@ import "./Navbar.css";
 import GetCSSModal from "./GetCSS/GetCSSModal";
 import Rotate from "./Rotate/Rotate";
 import ViewFavorites from "../Navbar/ViewFavorites/index";
+import ViewAll from "../Navbar/ViewAll/ViewAllMenu";
 
 const Navbar = () => {
   const style = {
@@ -37,6 +38,9 @@ const Navbar = () => {
           </li>
           <li className="m-3 text-primary">
             <GetCSSModal />
+          </li>
+          <li className="m-3 text-secondary">
+            <ViewAll />
           </li>
           <li className="m-3 text-dark">
             <Rotate />

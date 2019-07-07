@@ -28,9 +28,6 @@ class ColorNav extends Component {
           <div className="m-5 colorPanelNav">
             <DownloadPDF />
           </div>
-          <div className="m-5 colorPanelNav">
-            <ViewAllMenu />
-          </div>
           <br />
           <div>{gradient.name}</div>
         </h4>

@@ -3,6 +3,8 @@ import "./App.css";
 import ColorPanel from "./components/ColorPanel/ColorPanel";
 import Navbar from "./components/Navbar/Navbar";
 import { GradientContext } from "../src/context";
+import Arrows from "./components/ColorPanel/Arrows";
+import ColorNav from "./components/ColorPanel/ColorNav";
 
 class App extends Component {
   static contextType = GradientContext;
@@ -21,9 +23,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" onKeyDown={this.onKeyPressed} tabIndex="0">
+      <div onKeyDown={this.onKeyPressed} tabIndex="0">
         <Navbar />
         <ColorPanel />
+        <ColorNav />
+        <Arrows />
       </div>
     );
   }

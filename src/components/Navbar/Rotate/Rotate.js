@@ -9,7 +9,7 @@ class Rotate extends Component {
     return (
       <div>
         <i
-          className="fa fa-refresh"
+          className="fa fa-redo-alt"
           data-tip={`Rotate`}
           data-for="rotate"
           style={{ fontSize: "20px" }}

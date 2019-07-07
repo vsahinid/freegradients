@@ -6,7 +6,7 @@ const InfoCircle = props => {
     <React.Fragment>
       <p data-tip={props.definition} data-for="infocircle">
         {" "}
-        <i className="fa fa-info-circle" />
+        <i className="fas fa-info-circle" />
       </p>
       <ReactTooltip place="top" id="infocircle" />
     </React.Fragment>

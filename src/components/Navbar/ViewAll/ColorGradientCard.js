@@ -12,7 +12,9 @@ const ColorGradientCard = props => {
         style={{ background: colorGradient, border: "none" }}
       >
         <div className="card-body">
-          <h5 className="card-title mt-5 mb-5 text-white">{props.name}</h5>
+          <h5 className="card-title mt-5 mb-5 text-white text-center">
+            {props.name}
+          </h5>
         </div>
       </div>
     </div>

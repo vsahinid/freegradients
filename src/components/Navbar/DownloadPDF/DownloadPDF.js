@@ -39,7 +39,7 @@ class DownloadPDF extends Component {
       <React.Fragment>
         <span onClick={this.downloadPDF}>
           <i
-            className="fas fa-file-pdf"
+            className="fa fa-file-pdf-o"
             data-tip={`Download as PDF`}
             data-for="downloadpdf"
             style={{ fontSize: "20px" }}

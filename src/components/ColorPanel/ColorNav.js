@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ViewAllMenu from "../Navbar/ViewAll/ViewAllMenu";
 import InfoCircle from "./InfoCircle";
 import Favorite from "./Favorite";
 import DownloadPDF from "../Navbar/DownloadPDF/DownloadPDF";

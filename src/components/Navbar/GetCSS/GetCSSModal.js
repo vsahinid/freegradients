@@ -24,7 +24,7 @@ class GetCSSModal extends Component {
         <span data-toggle="modal" data-target="#exampleModal">
           {" "}
           <i
-            className="fab fa-css3-alt"
+            className="fa fa-css3"
             data-tip={`Get CSS`}
             data-for="getcss"
             style={{ fontSize: "20px" }}

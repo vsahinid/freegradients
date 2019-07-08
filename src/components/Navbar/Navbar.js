@@ -16,7 +16,11 @@ const Navbar = () => {
       className="navbar navbar-expand-lg navbar-light navbar-static-top"
       style={style}
     >
-      <Link to="/" className="navbar-brand" style={{ fontFamily: "Lobster" }}>
+      <Link
+        to="/"
+        className="navbar-brand"
+        style={{ fontFamily: "Architects Daughter" }}
+      >
         <h2>Free Gradients</h2>
       </Link>
       <button

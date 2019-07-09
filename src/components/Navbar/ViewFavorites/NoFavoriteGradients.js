@@ -2,8 +2,8 @@ import React from "react";
 
 const NoFavoriteGradients = () => {
   return (
-    <div className="container text-secondary">
-      <i className="far fa-star" />
+    <div className="container text-secondary text-center">
+      <i className="fa fa-star" />
       <h5 style={{ color: "black" }}>No favorite gradients</h5>
       <p className="">
         You have not favorited any gradients yet. Use the star icon on a color

@@ -5,7 +5,7 @@
   "dependencies": {
     "html2canvas": "^1.0.0-rc.3",
     "jspdf": "^1.5.3",
-    "postcss-preset-env": "^6.6.0",
+    "postcss-preset-env": "^6.7.0",
     "react": "^16.8.6",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.8.6",

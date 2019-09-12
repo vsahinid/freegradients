@@ -1,15 +1,27 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import { hydrate, render } from "react-dom";
+// import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { GradientProvider } from "./context";
 
-ReactDOM.render(
-  <GradientProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </GradientProvider>,
-  document.getElementById("root")
-);
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(
+    <GradientProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </GradientProvider>,
+    rootElement
+  );
+} else {
+  render(
+    <GradientProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </GradientProvider>,
+    rootElement
+  );
+}
